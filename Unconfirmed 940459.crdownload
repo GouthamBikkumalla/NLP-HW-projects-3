@@ -1,0 +1,145 @@
+# The start symbol is START.
+
+START -> S1
+
+# This is a very, very, very simple grammar to get you started.
+
+# Sentences
+S1 -> NP VP Eos | WhAUX NP VP Eos | WHNP DO NP VP Eos | DO NOT VP Eos | NEW_PHARESES | NEW_PHARS
+
+# Verb phrases
+VP -> VerbT NP | VerbT NP PP | VerbT PP | VerbT | BeVerb PastParticiple PP | PluralVerb | BeVerb PP | Modals VP | PassiveVP | PPC PP | MPC NP | PluralVerb ADVP | SingularVerb PP | BeVerb ADJP | PluralVerb NP | VBD VP | VBD PP
+
+# Noun phrases
+NP -> Det NP | Proper | Noun PP | Noun | Det ADJP NP | Det Noun | NonProperPeople | Numbers PluralNouns | PluralNouns | Numbers ADJP | Proper PP | PluralProper | Proper CNP | Perspron | PresentParticiple PP | DO PluralNouns | Det Noun | Det JJS NNS
+
+#Adverb phrases
+ADVP -> adv | adv ADVP | adv PP 
+
+#Adjective phrases
+ADJP -> adj | adj ADJP | Superlative | adj PluralNouns | NOT ADJP
+
+# Prepositional phrase
+PP -> Prep NP | TO NP | TO VP NP
+
+# Defining the Past Perfect Continuous (PPC)
+PPC -> VerbPtense PastParticiple PresentParticiple
+
+# Defining the model Perfect Continuous (MPC)
+MPC -> Modals PluralVerb PastParticiple PresentParticiple
+
+# Defining Conjunction proper Phrase (CNP)
+CNP -> Conj Proper
+
+# Defining Wh Auxiliary phrase (WhAUX)
+WhAUX -> WhAdverbs DO
+
+# Defining Coordinative conjunctions(CoCP)
+CoCP -> Conj NP
+
+# Defining WH noun phrase(WHNP)
+WHNP -> WhDet NP
+
+# Introducing PassiveVP for passive construction
+PassiveVP -> PluralVerb PastParticiple | BeVerb PastParticiple NP
+
+NEW_PHARESES -> WRB DO NNP VB Det Noun Eos
+
+# Wh-question phrase (WHQ)
+WHQ -> WhAUX NP VP Eos
+
+# Wh-words
+WRB -> 'How'
+
+# Interrogative determiners
+WDT -> 'What'
+
+# Defining Wh question phrase (WHQ)
+WhQ -> WhDet DO NP VP Eos
+
+NEW_PHARS -> WRB DO NNP VB Det Noun Eos | WhQ
+
+# Singular and mass nouns.
+Noun -> 'castle' | 'king' | 'defeater' | 'sovereign' | 'servant' | 'corner' | 'land' | 'quest' | 'chalice' | 'master' | 'horse' | 'fruit' | 'swallow' | 'sun' | 'winter' | 'coconut' | 'pound' | 'husk' | 'home' | 'weight' | 'story' | 'carried' | 'hottest' | 'Britons'
+
+# Determiners
+Det -> 'a' | 'another' | 'any' | 'each' | 'every' | 'no' | 'that' | 'the' | 'this'
+
+# Prepositions
+Prep -> 'above' | 'across' | 'at' | 'below' | 'by' | 'for' | 'from' | 'into' | 'near' | 'of' | 'on' | 'over' | 'through' | 'with'
+
+# Proper nouns, this tag is just for people
+Proper -> 'Arthur' | 'Guinevere' | 'Sir_Lancelot' | 'Sir_Bedevere' | 'Zoot' | 'Dingo' | 'Patsy'
+
+# Plural proper nouns.
+PluralProper -> 'Britons' | 'Saxons'
+
+# Verbs (third person singular present).
+VerbT -> 'has' | 'covers' | 'is' | 'drinks' | 'carries' | 'rides'
+
+# Be verbs for passive constructions and states
+BeVerb -> 'is' | 'was' | 'were' | 'are' | 'been'
+
+# Plural nouns.
+PluralNouns -> 'coconuts' | 'halves' | 'snows' | 'mountains' | 'areas' | 'strangers' | 'inches' | 'ants' | 'nights'
+
+# Personal pronouns.
+Perspron -> 'he' | 'her' | 'him' | 'it' | 'one' | 'she' | 'them' | 'they' | 'his'
+
+# More proper nouns, not people.
+NonProperPeople -> 'Camelot' | 'England' | 'Holy_Grail' | 'Round_Table'
+
+# Adverbs.
+adv -> 'again' | 'already' | 'currently' | 'frequently' | 'precisely' | 'south' | 'successfully' | 'unfortunately'
+
+# Adjectives
+adj -> 'plodding' | 'bloody' | 'weary' | 'unable' | 'trusty' | 'further' | 'sacred' | 'hot' | 'lucky' | 'simple' | 'tiny' | 'hard' | 'sensational' 
+
+# Coordinating conjunctions.
+Conj -> 'and' | 'but' | 'or' | 'either' | 'nor' | 'neither' | 'so' | 'because'
+
+# Numbers.
+Numbers -> 'eight' | 'five' | 'one' | '5.5' | 'sixty' | '5,000'
+
+# Modals.
+Modals -> 'can' | 'could' | 'may' | 'might' | 'must' | 'ought' | 'shall' | 'should' | 'will' | 'would'
+
+# Verbs (present, plural, third person).
+PluralVerb -> 'have' | 'speak' | 'cover' | 'are' | 'ride' | 'drink' | 'grow' | 'carry' | 'suggest' | 'migrate' | 'know'
+
+#Verbs (past participle).
+PastParticiple -> 'spoken' | 'covered' | 'been' | 'ridden' | 'drunk' | 'grown' | 'carried' | 'suggested' | 'migrated' | 'known'
+
+# Wh-adverbs
+WhAdverbs -> 'how' | 'when' | 'where' | 'why' | 'who'
+
+# Wh-determiners.
+WhDet -> 'that' | 'what' | 'which'
+
+# Verbs (past tense).
+VerbPtense -> 'had' | 'spoke' | 'covered' | 'was' | 'were' | 'rode' | 'drank' | 'grew' | 'carried' | 'suggested' | 'migrated' | 'knew'
+
+# Verbs (present participles).
+PresentParticiple -> 'having' | 'speaking' | 'covering' | 'being' | 'riding' | 'drinking' | 'growing' | 'carrying' | 'suggesting' | 'migrating' | 'knowing'
+
+# More third person singular verbs.
+SingularVerb -> 'speaks' | 'grows' | 'goes' | 'migrates' | 'suggests' | 'knows'
+
+# Verbs (past tense).
+VBD ->  'was' | 'carried' 
+# Plural nouns.
+NNS -> 'coconuts' | 'mountains' 
+# Superlative adjectives.
+JJS ->  'hottest' 
+
+# End-of-sentence.
+Eos -> '!' | '.' | '?'
+
+# 'to'
+TO -> 'to'
+
+# 'not'
+NOT -> 'not'
+
+# 'do'/'does'
+DO -> 'do' | 'does'
